@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DAE4359F-55FC-4B92-B55E-FDD405817004}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DF79959-AA32-4B7D-95FD-47156CF5F356}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ImageOptimizer", "src\ImageOptimizer\ImageOptimizer.xproj", "{DDBB247C-D02F-46E8-9A58-0777D5659F26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDBB247C-D02F-46E8-9A58-0777D5659F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBB247C-D02F-46E8-9A58-0777D5659F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBB247C-D02F-46E8-9A58-0777D5659F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBB247C-D02F-46E8-9A58-0777D5659F26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDBB247C-D02F-46E8-9A58-0777D5659F26} = {DAE4359F-55FC-4B92-B55E-FDD405817004}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://adamradocz.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\ImageOptimizer\\ImageOptimizer.xproj
+		SccProjectTopLevelParentUniqueName1 = ImageOptimizer.sln
+		SccProjectName1 = src/ImageOptimizer
+		SccLocalPath1 = src\\ImageOptimizer
+	EndGlobalSection
+EndGlobal

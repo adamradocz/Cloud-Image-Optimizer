@@ -1,0 +1,51 @@
+@inject UserManager<ApplicationUser> UserManager
+
+@model List<ApiKey>
+@{
+    ViewData["Title"] = "Api Keys";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr/>
+
+<!-- Table of API Keys -->
+<h4>Your API Keys</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped table-hover">
+            <tr class="info">
+                <th>@Html.DisplayNameFor(model => Model.First().Created)</th>
+                <th>User</th>
+                <th>@Html.DisplayNameFor(model => Model.First().Key)</th>
+                <th>Remove</th>
+            </tr>
+            @foreach (var apiKey in Model)
+            {
+                var user = await UserManager.FindByIdAsync(apiKey.ApplicationUserId);
+                <tr>
+                    <td>@apiKey.Created</td>
+                    <td>@user.UserName</td>
+                    <td>@apiKey.Key</td>
+                    <td>
+                        <form asp-controller="Manage" asp-action="RemoveApiKey" method="post" class="form-horizontal" role="form" asp-antiforgery="true">
+                            <button type="submit" name="id" value="@apiKey.Id" class="btn btn-sm btn-danger">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<form asp-controller="Manage" asp-action="CreateApiKey" method="post" class="form-horizontal" role="form" asp-antiforgery="true">
+    <div class="form-group">
+        <div class="col-md-12">
+            <button type="submit" value="Create" class="btn btn-default btn-primary">Create a Key</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

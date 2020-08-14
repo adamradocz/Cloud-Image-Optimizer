@@ -1,0 +1,36 @@
+﻿@model Braintree.Result<Braintree.Subscription>
+@{
+    ViewData["Title"] = "Transaction";
+}
+<h2>@ViewData["Title"]</h2>
+
+@{
+    if (Model.IsSuccess())
+    {
+        var subscription = Model.Target;
+        <h3>Success!</h3>
+        <p>Subscription ID: @subscription.Id</p>
+        <p>Subscription Amount: @subscription.Price</p>
+    }
+    else if (Model.Transaction != null)
+    {
+        var transaction = Model.Transaction;
+        <h3>Error processing transaction!</h3>
+        <p>Status: @transaction.Status</p>
+        <p>Code: @transaction.ProcessorResponseCode</p>
+        <p>Text: @transaction.ProcessorResponseText</p>
+        <p>Target ID: @Model.Target.Id</p>
+        <p>Message: @Model.Message</p>
+    }
+    else
+    {
+        <h3>Error processing transaction!</h3>
+        foreach (var error in Model.Errors.DeepAll())
+        {
+            <p>Attribute: @error.Attribute</p>
+            <p>Code: @error.Code</p>
+            <p>Message: @error.Message</p>
+            <p></p>
+        }
+    }
+}

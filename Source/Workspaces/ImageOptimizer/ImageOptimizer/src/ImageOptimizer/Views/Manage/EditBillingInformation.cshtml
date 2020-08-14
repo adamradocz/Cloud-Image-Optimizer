@@ -1,0 +1,84 @@
+﻿@model EditBillingInformationViewModel
+@{
+    ViewData["Title"] = "Edit Billing Information";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" asp-controller="Manage" asp-action="EditBillingInformation" asp-antiforgery="true" asp-route-returnurl="@ViewData["ReturnUrl"]">
+    <div asp-validation-summary="All" class="input-validation-error"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.FirstName"></label>
+                <input asp-for="@Model.FirstName" class="form-control" />
+                <span asp-validation-for="@Model.FirstName" class="field-validation-error"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.LastName"></label>
+                <input asp-for="@Model.LastName" class="form-control" />
+                <span asp-validation-for="@Model.LastName" class="field-validation-error"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label asp-for="@Model.CompanyName"></label>
+                <input asp-for="@Model.CompanyName" class="form-control" />
+                <span asp-validation-for="@Model.CompanyName" class="field-validation-error"></span>
+            </div>
+        </div>        
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.StreetAddress"></label>
+                <input asp-for="@Model.StreetAddress" class="form-control" />
+                <span asp-validation-for="@Model.StreetAddress" class="field-validation-error"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.City"></label>
+                <input asp-for="@Model.City" class="form-control" />
+                <span asp-validation-for="@Model.City" class="field-validation-error"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.State"></label>
+                <input asp-for="@Model.State" class="form-control" />
+                <span asp-validation-for="@Model.State" class="field-validation-error"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.ZipCode"></label>
+                <input asp-for="@Model.ZipCode" class="form-control" />
+                <span asp-validation-for="@Model.ZipCode" class="field-validation-error"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.CountryId"></label>
+                <select asp-for="@Model.CountryId" asp-items="@Model.Countries" class="form-control dropdown-toggle"></select>
+                <span asp-validation-for="@Model.CountryId" class="field-validation-error"></span>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+        <span class="glyphicon glyphicon-saved" aria-hidden="true"></span> Save
+    </button>
+</form>

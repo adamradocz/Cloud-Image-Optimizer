@@ -1,0 +1,42 @@
+WebP:
+-----
+cwebp v0.5.0 - https://developers.google.com/speed/webp/
+gif2webp - WebP Encoder version: 0.5.0, WebP Mux version: 0.3.0 - https://developers.google.com/speed/webp/
+
+Jpeg-XR:
+--------
+jxrlib v1.1 - https://jxrlib.codeplex.com/
+
+JPG:
+----
+Jpegoptim v1.4.4 beta -  https://github.com/tjko/jpegoptim
+Jpegtran - mozjpeg version 3.1 (build 18/03/2016) - https://github.com/mozilla/mozjpeg - http://css-ig.net/tools/public/ (Better than libjpeg-turbo)
+JpegStripper v2014.03.16 - http://rtfreesoft.blogspot.ru/2014/03/jpegstripper.html
+
+PNG:
+----
+PNGQuant v2.7.1 - https://pngquant.org/ - http://css-ig.net/tools/public/
+
+TruePNG v0.6.2.2 - http://x128.ho.ua/pngutils.html
+
+ZopfliPNG v2016.03.18 - https://github.com/google/zopfli - http://css-ig.net/tools/public/
+PNGWolf v2012.01.07 (Libraries: GAlib: v2.47 - 7-Zip: v16.02 - zlib:  v1.28) - https://github.com/hoehrmann/pngwolf - http://bjoern.hoehrmann.de/pngwolf/
+PNGWolf-Zopfli - v2016.03.09 - (Libraries: GAlib: v2.47 - Zopfli:v2016.05.27 - zlib:  v1.28) - https://github.com/jibsen/pngwolf-zopfli
+
+DeflOpt v2.07
+Defluff v0.3.2 - https://github.com/imgo/imgo-tools/tree/master/src/defluff - http://encode.ru/threads/1214-defluff-a-deflate-huffman-optimizer
+
+APNG:
+-----
+Gif2APNG v1.9 - http://gif2apng.sourceforge.net/ - http://sourceforge.net/projects/gif2apng/
+APNGOpt v1.4 - http://sourceforge.net/projects/apng/files/APNG_Optimizer/
+ApngDis v2.8 - http://sourceforge.net/projects/apngdis/ - http://apngdis.sourceforge.net/
+ApngAsm v2.9 - http://sourceforge.net/projects/apngasm/ - http://apngasm.sourceforge.net/
+
+GIF:
+----
+Gifsicle v1.88 - https://github.com/kohler/gifsicle
+
+Others:
+-------
+NConvert v6.80 - http://www.xnview.com/en/nconvert/

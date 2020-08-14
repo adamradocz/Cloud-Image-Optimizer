@@ -1,0 +1,26 @@
+﻿@model ImageOptimizer.Models.SubscriptionViewModels.PaymentInformationViewModel
+@{
+    ViewData["Title"] = "Payment Information";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" asp-controller="Subscription" asp-action="CreateSubscription" asp-antiforgery="true">
+    <div class="form-group">
+        <label asp-for="@Model.PaymentGatewaySubscriptionPlanId"></label>
+        <select asp-for="@Model.PaymentGatewaySubscriptionPlanId" asp-items="@Model.SubscriptionPlans" class="form-control dropdown-toggle"></select>
+        <span asp-validation-for="@Model.PaymentGatewaySubscriptionPlanId" class="field-validation-error"></span>
+    </div>
+
+    <div id="payment-form"></div>
+
+    <input type="submit" value="Pay">
+</form>
+
+@section scripts
+{
+    <script src="https://js.braintreegateway.com/js/braintree-2.23.0.min.js"></script>
+    <script>
+        var clientTokenFromServer = "@Model.ClientToken";
+        braintree.setup(clientTokenFromServer, "dropin", { container: "payment-form" });
+    </script>
+}

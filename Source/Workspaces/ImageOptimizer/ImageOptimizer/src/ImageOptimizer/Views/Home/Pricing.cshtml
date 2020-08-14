@@ -1,0 +1,122 @@
+﻿@model ImageOptimizer.Models.HomeViewModels.PricingViewModel
+@{
+    ViewData["Title"] = "Pricing";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-12 table-responsive">
+        <table class="table table-striped table-bordered table-hover text-center">
+            <tr>
+                <th class="col-md-3"></th>
+                <td class="bg-success"><h4>Free</h4></td>
+                <td class="bg-info"><h4>Basic</h4></td>
+                <td class="bg-primary"><h4>Professional</h4></td>
+                <td class="bg-primary"><h4>Professional+</h4></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <h3><strong>$0 / month</strong>
+                    </h3></td>
+                <td>
+                    <h3><strong>$9 / month</strong>
+                    </h3></td>
+                <td>
+                    <h3><strong>$19 / month</strong>
+                    </h3></td>
+                <td>
+                    <h3><strong>$79 / month</strong>
+                    </h3></td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Optimization level</th>
+                <td>Low</td>
+                <td>Normal</td>
+                <td>High</td>
+                <td>Best</td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Allowed image formats</th>
+                <td>Jpeg, Png, Gif</td>
+                <td>Jpeg, Png, Gif</td>
+                <td>Jpeg, Png, Gif</td>
+                <td>Jpeg, Png, Gif</td>
+            </tr>            
+            <tr>
+                <th class="col-md-3">Max. image size</th>
+                <td>0.1 Mb</td>
+                <td>1 Mb</td>
+                <td>5 Mb</td>
+                <td>32 Mb</td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Images per month</th>
+                <td>100</td>
+                <td>1000</td>
+                <td>1000</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <th class="col-md-3">WebP conversion</th>
+                <td></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Jpeg XR conversion</th>
+                <td></td>
+                <td></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Apng conversion</th>
+                <td></td>
+                <td></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Wordpress plugin</th>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+            <tr>
+                <th class="col-md-3">Wordpress Multisite support <br />
+                (Coming soon)
+                </th>
+                <td></td>
+                <td></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+            <tr>
+                <th class="col-md-3">SSL</th>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+                <td><span class="glyphicon glyphicon-ok"></span></td>
+            </tr>
+            <tr>
+                <th class="col-md-3"></th>
+                @for (int i = 0; i < 4; i++)
+                {
+                    <td>
+                        @if (Model.IsAuthenticated)
+                        {
+                            <a asp-controller="Manage" asp-action="Billing" class="btn btn-block btn-danger">Upgrade your account</a>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-block btn-danger">Get started FREE</a>
+                        }
+                    </td>
+                }
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model ImageOptimizer.Models.SubscriptionViewModels.BillingInformationViewModel
+@{
+    ViewData["Title"] = "Billing Information";
+}
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.BillingAddress != null)
+{
+    <p>
+        <strong>@Model.BillingAddress.FirstName @Model.BillingAddress.LastName</strong><br />
+        @Model.BillingAddress.CompanyName
+    </p>
+    <p>
+        @Model.BillingAddress.StreetAddress<br />
+        @Model.BillingAddress.City, @Model.BillingAddress.State @Model.BillingAddress.ZipCode<br />
+        @Model.Country
+    </p>
+    <p>
+        <a asp-controller="Manage" asp-action="EditBillingInformation" asp-route-returnurl="@ViewData["ReturnUrl"]" class="btn btn-primary">
+            <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Edit Billing Information
+        </a>
+        <a asp-controller="Subscription" asp-action="PaymentInformation" class="btn btn-success">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Next
+        </a>
+    </p>
+}
+else
+{
+    <a asp-controller="Manage" asp-action="EditBillingInformation" asp-route-returnurl="@ViewData["ReturnUrl"]" class="btn btn-primary">
+        <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Add Billing Information
+    </a>
+}

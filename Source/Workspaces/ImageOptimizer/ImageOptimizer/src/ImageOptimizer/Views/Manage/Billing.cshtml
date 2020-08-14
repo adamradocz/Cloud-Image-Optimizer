@@ -1,0 +1,59 @@
+﻿@model BillingViewModel
+@{
+    ViewData["Title"] = "Billing";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    @if (Model.Message != null)
+    {
+        <div class="alert alert-info" role="alert">@Model.Message</div>
+    }
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Plan Level</h3>
+            <p>Your plan level: <strong>@Model.PlanName</strong></p>
+            <p>
+                @if (string.Equals(Model.PlanName, "Free"))
+                {
+                    <a asp-controller="Subscription" asp-action="BillingInformation" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Upgrade Plan Level
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="Subscription" asp-action="CancelSubscription" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel Subscription
+                    </a>
+                    <p>If you want to update your account, first you have to cancel the current one.</p>
+                }
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Billing Information</h3>
+            @if (Model.BillingAddress != null)
+            {
+                <p>
+                    <strong>@Model.BillingAddress.FirstName @Model.BillingAddress.LastName</strong><br />
+                    @Model.BillingAddress.CompanyName
+                </p>
+                <p>
+                    @Model.BillingAddress.StreetAddress<br />
+                    @Model.BillingAddress.City, @Model.BillingAddress.State @Model.BillingAddress.ZipCode<br />
+                    @Model.Country
+                </p>
+                <p>
+                    <a asp-controller="Manage" asp-action="EditBillingInformation" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Edit Billing Information
+                    </a>
+                </p>
+            }
+            else
+            {
+                <a asp-controller="Manage" asp-action="EditBillingInformation" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Add Billing Information
+                </a>
+            }
+        </div>
+    </div>
+</div>
